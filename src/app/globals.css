@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #FAF9F6;
+  color: #242424;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Team marquee: works as a plain horizontally-scrollable row even if GSAP
+   or JavaScript never runs — see TeamMarquee.tsx comments. */
+.team-marquee-track {
+  scrollbar-width: thin;
+}
+.team-marquee-track:focus {
+  outline: none;
+}
+
+/* Rendered blog article content (see RichTextRenderer.tsx) */
+.article-prose h2 {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: #242424;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.article-prose h3 {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #242424;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.article-prose p {
+  margin-bottom: 1.1rem;
+  line-height: 1.8;
+  color: #242424;
+}
+.article-prose ul,
+.article-prose ol {
+  margin: 0 0 1.1rem 1.25rem;
+  line-height: 1.8;
+}
+.article-prose ul { list-style: disc; }
+.article-prose ol { list-style: decimal; }
+.article-prose a {
+  color: #F56624;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.article-prose blockquote {
+  border-left: 3px solid #F56624;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #666666;
+  font-style: italic;
+}
+.article-prose img {
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+.article-prose hr {
+  border: none;
+  border-top: 1px solid #E5E7EB;
+  margin: 2rem 0;
+}
+
+/* Visible focus ring for keyboard users across the site */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #F56624;
+  outline-offset: 2px;
+}
