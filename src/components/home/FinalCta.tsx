@@ -18,7 +18,7 @@ export function FinalCta() {
           Ready to discuss your SEO or digital marketing needs?
         </h2>
         <p className="text-white/70 text-base md:text-lg mb-9 leading-relaxed">
-          Tell us about your business and goals — we&apos;ll follow up to talk through how we can
+          Tell us about your business and goals we&apos;ll follow up to talk through how we can
           help.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">

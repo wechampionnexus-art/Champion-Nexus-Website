@@ -1,7 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import * as Icons from 'lucide-react';
-import { ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+  Search,
+  FileText,
+  Link2,
+  ClipboardCheck,
+  Target,
+  PenTool,
+  Share2,
+  BarChart3,
+  Sparkles,
+  type LucideIcon,
+} from 'lucide-react';
 import { getPublishedServices } from '@/lib/data/services';
 import { buildMetadata } from '@/lib/seo/metadata';
 
@@ -12,13 +23,36 @@ export const metadata: Metadata = buildMetadata({
   path: '/services',
 });
 
-function resolveIcon(name: string | null) {
-  if (!name) return Icons.Sparkles;
-  const key = name
-    .split('-')
-    .map((part, i) => (i === 0 ? part : part[0]?.toUpperCase() ?? '') + part.slice(1))
-    .join('') as keyof typeof Icons;
-  return (Icons[key] as typeof Icons.Sparkles | undefined) ?? Icons.Sparkles;
+/**
+ * Static icon for each service.
+ * Keys are the service title turned into a slug-style string
+ * (lowercase, symbols replaced with "-").
+ */
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  'seo': Search,
+  'guest-posting': FileText,
+  'link-building': Link2,
+  'seo-audit': ClipboardCheck,
+  'competitor-analysis': Target,
+  'content-marketing': PenTool,
+  'social-media-marketing': Share2,
+  'seo-reporting-analytics': BarChart3,
+};
+
+function toKey(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function getServiceIcon(title: string, slug?: string | null): LucideIcon {
+  return (
+    SERVICE_ICONS[toKey(title)] ??
+    (slug ? SERVICE_ICONS[toKey(slug)] : undefined) ??
+    Search // fallback for any new service you add later
+  );
 }
 
 export default async function ServicesPage() {
@@ -41,7 +75,7 @@ export default async function ServicesPage() {
         <div className="max-w-container mx-auto px-5 md:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service) => {
-              const Icon = resolveIcon(service.icon);
+              const Icon = getServiceIcon(service.title, service.slug);
               return (
                 <Link
                   key={service.id}

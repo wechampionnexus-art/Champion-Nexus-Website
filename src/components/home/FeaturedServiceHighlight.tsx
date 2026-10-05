@@ -197,7 +197,7 @@ export function FeaturedServiceHighlight() {
             SEO that builds long-term visibility
           </h2>
           <p className="text-ink-muted text-base md:text-lg leading-relaxed mb-8">
-            Technical SEO, content strategy and authority building working together — so your
+            Technical SEO, content strategy and authority building working together so your
             visibility compounds instead of resetting every algorithm update.
           </p>
           <ButtonLink href="/services/search-engine-optimization">

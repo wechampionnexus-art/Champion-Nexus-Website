@@ -6,7 +6,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Our Team',
-  description: 'Meet the people behind Champion Nexus — SEO, content, and digital marketing specialists.',
+  description: 'Meet the people behind Champion Nexus SEO, content, and digital marketing specialists.',
   path: '/team',
 });
 

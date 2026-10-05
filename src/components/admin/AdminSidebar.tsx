@@ -73,7 +73,7 @@ export function AdminSidebar({ adminBase, adminEmail }: Props) {
       {/* Mobile top bar — visible below md, hidden on desktop */}
       <div className="md:hidden sticky top-0 z-40 flex items-center justify-between h-16 px-4 bg-white border-b border-line">
         <div>
-          <p className="font-display font-bold text-ink text-sm">Champion Nexus</p>
+          <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} />
           <p className="text-[11px] text-ink-soft -mt-0.5">Admin dashboard</p>
         </div>
         <button

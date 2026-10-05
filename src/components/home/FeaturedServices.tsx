@@ -1,20 +1,57 @@
 import Link from 'next/link';
-import * as Icons from 'lucide-react';
-import { ArrowRight } from 'lucide-react';
+// import * as Icons from 'lucide-react';
+import {
+  ArrowRight,
+  Search,
+  FileText,
+  Link2,
+  ClipboardCheck,
+  Target,
+  PenTool,
+  Sparkles,
+  type LucideIcon,
+
+} from 'lucide-react';
+import { ChartNoAxesCombined} from 'lucide-react';
 import { getPublishedServices } from '@/lib/data/services';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ButtonLink } from '@/components/ui/Button';
 
+
+
 function resolveIcon(name: string | null) {
-  if (!name) return Icons.Sparkles;
+  if (!name) return ChartNoAxesCombined;
   const key = name
     .split('-')
     .map((part, i) => (i === 0 ? part : part[0]?.toUpperCase() ?? '') + part.slice(1))
-    .join('') as keyof typeof Icons;
-  const Icon = Icons[key] as typeof Icons.Sparkles | undefined;
-  return Icon ?? Icons.Sparkles;
+    .join('') as keyof typeof ChartNoAxesCombined;
+  const Icon = ChartNoAxesCombined[key] as typeof ChartNoAxesCombined | undefined;
+  return Icon ?? ChartNoAxesCombined;
+}
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  'seo': Search,
+  'guest-posting': FileText,
+  'link-building': Link2,
+  'seo-audit': ClipboardCheck,
+  'competitor-analysis': Target,
+  'content-marketing': PenTool,
+};
+
+function toKey(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
+function getServiceIcon(title: string, slug?: string | null): LucideIcon {
+  return (
+    SERVICE_ICONS[toKey(title)] ??
+    (slug ? SERVICE_ICONS[toKey(slug)] : undefined) ??
+    Search // fallback for any new service you add later
+  );
+}
 export async function FeaturedServices() {
   const services = await getPublishedServices();
   const items = services.slice(0, 6);
@@ -30,7 +67,7 @@ export async function FeaturedServices() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((service) => {
-            const Icon = resolveIcon(service.icon);
+            const Icon = getServiceIcon(service.title, service.slug);
             return (
               <Link
                 key={service.id}

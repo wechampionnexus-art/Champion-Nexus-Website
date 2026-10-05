@@ -109,7 +109,7 @@ export function Hero() {
           </h1>
           <p className="hero-sub text-ink-muted text-lg mt-6 max-w-xl leading-relaxed">
             Champion Nexus helps businesses improve search visibility and strengthen digital
-            marketing performance through SEO, content, and data-informed strategy — without
+            marketing performance through SEO, content, and data-informed strategy, without
             overstating what any single channel can deliver.
           </p>
           <div className="hero-ctas flex flex-wrap items-center gap-4 mt-9">

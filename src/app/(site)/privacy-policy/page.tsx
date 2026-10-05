@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
         </h1>
         <p className="text-ink-soft text-sm mb-12">
           This policy describes, accurately, what this website actually collects based on how it
-          is built. It is not legal advice — have it reviewed by counsel before launch, and update
+          is built. It is not legal advice have it reviewed by counsel before launch, and update
           the bracketed placeholders with confirmed details.
         </p>
 
@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-display font-bold text-ink text-lg mb-2">Email notifications</h2>
             <p>
               When you submit the contact form, a notification email is sent to our team via
-              [confirm email provider — Resend is configured by default] so we can respond to
+              [confirm email provider Resend is configured by default] so we can respond to
               your inquiry.
             </p>
           </section>

@@ -21,7 +21,7 @@ export default function ContactPage() {
             Let&apos;s talk about your growth
           </h1>
           <p className="text-ink-muted text-lg mt-5 max-w-xl">
-            Tell us a bit about your business and goals — we&apos;ll follow up to discuss how we
+            Tell us a bit about your business and goals we&apos;ll follow up to discuss how we
             can help.
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function ContactPage() {
               <Mail size={20} className="text-brand-orange mb-3" />
               <h3 className="font-display font-bold text-ink mb-1">Email</h3>
               <p className="text-ink-muted text-sm">
-                Contact email to be confirmed by the client — update
+                Contact email to be confirmed by the client update
                 CONTACT_TO_EMAIL and this page before launch.
               </p>
             </div>

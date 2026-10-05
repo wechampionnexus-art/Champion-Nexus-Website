@@ -6,12 +6,12 @@ import { buildMetadata } from '@/lib/seo/metadata';
 export const metadata: Metadata = buildMetadata({
   title: 'About Champion Nexus',
   description:
-    'Champion Nexus is a digital growth partner focused on SEO, content, and digital marketing — built around transparent communication and realistic results.',
+    'Champion Nexus is a digital growth partner focused on SEO, content, and digital marketing, built around transparent communication and realistic results.',
   path: '/about',
 });
 
 const VALUES = [
-  { icon: Shield, title: 'Transparency', desc: 'Clear strategy and honest reporting — no vague promises or inflated claims.' },
+  { icon: Shield, title: 'Transparency', desc: 'Clear strategy and honest reporting, no vague promises or inflated claims.' },
   { icon: Target, title: 'Strategy first', desc: 'Every piece of work connects back to a defined, agreed objective.' },
   { icon: Telescope, title: 'Long-term thinking', desc: 'We aim for durable visibility, not short-lived spikes.' },
   { icon: MessageCircle, title: 'Clear communication', desc: "You'll always know what we're doing and why." },
@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="max-w-container mx-auto px-5 md:px-8 grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-5 text-ink-muted text-base md:text-lg leading-relaxed">
             <p>
-              Champion Nexus works with businesses that want their online presence to do more —
+              Champion Nexus works with businesses that want their online presence to do more
               through SEO, content, link building, and digital marketing built around clear
               strategy rather than guesswork.
             </p>

@@ -32,7 +32,7 @@ export function ProblemSolution() {
         <SectionHeading
           eyebrow="Common challenges"
           title="If this sounds familiar, you're not alone"
-          description="These are the challenges we hear most often from businesses before they start working with us — and the type of work we do to address them."
+          description="These are the challenges we hear most often from businesses before they start working with us and the type of work we do to address them."
           className="mb-14"
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

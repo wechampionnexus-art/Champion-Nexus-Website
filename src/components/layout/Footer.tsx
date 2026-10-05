@@ -87,7 +87,9 @@ export function Footer() {
 
         <div className="pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-soft">
           <span>© {new Date().getFullYear()} Champion Nexus. All rights reserved.</span>
-          <span>championnexus.pro</span>
+          <span>Developed by <a href="https://waqar-ali-portfolio-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-ink-muted hover:text-brand-orange transition-colors">
+            Waqar Ali
+          </a></span>
         </div>
       </div>
     </footer>
