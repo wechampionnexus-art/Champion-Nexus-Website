@@ -7,5 +7,5 @@ import { getAdminBasePath } from '@/lib/auth/getAdminBasePath';
 export async function logoutAction() {
   const supabase = createServerSupabaseClient();
   await supabase.auth.signOut();
-  redirect(`${getAdminBasePath()}/login`);
+  redirect('/');
 }

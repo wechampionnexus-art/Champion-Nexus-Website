@@ -28,7 +28,7 @@ export function AdminSidebar({ adminBase, adminEmail }: Props) {
 
   const links = [
     { href: adminBase, label: 'Overview', icon: LayoutDashboard, exact: true },
-    { href: `${adminBase}/users`, label: 'Dashboard Users', icon: UserPlus },
+    // { href: `${adminBase}/users`, label: 'Dashboard Users', icon: UserPlus },
   
     { href: `${adminBase}/posts`, label: 'Blog Posts', icon: FileText },
     { href: `${adminBase}/team`, label: 'Team Members', icon: Users },
