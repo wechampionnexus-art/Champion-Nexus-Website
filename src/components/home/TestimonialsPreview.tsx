@@ -1,27 +1,28 @@
+/**
+ * Goes at: src/components/home/TestimonialsPreview.tsx (same path/name as
+ * before — replaces it in place).
+ *
+ * CHANGE: this stays a Server Component and keeps fetching the data
+ * exactly as before, but display is now handed off to
+ * TestimonialsRotator.tsx (new file, delivered alongside this one) —
+ * the rotation timer, crossfade animation, and reduced-motion handling
+ * all need client-side state/effects, which a Server Component can't
+ * have. The export name (`TestimonialsPreview`) and what it renders
+ * from the outside are unchanged, so nothing importing it elsewhere
+ * needs to change.
+ */
+
 import { getPublishedTestimonials } from '@/lib/data/testimonials';
-import { Quote } from 'lucide-react';
+import { TestimonialsRotator } from './Testimonialsrotator';
 
 export async function TestimonialsPreview() {
   const { testimonials, isDemo } = await getPublishedTestimonials();
-  const item = testimonials[0];
-  if (!item) return null;
+  if (testimonials.length === 0) return null;
 
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="max-w-container mx-auto px-5 md:px-8">
-        <div className="max-w-2xl mx-auto text-center">
-          <span className="font-display text-xs font-semibold tracking-[0.14em] text-brand-orange uppercase">
-            {isDemo ? 'Sample testimonial placeholder content' : 'What clients say'}
-          </span>
-          <Quote size={32} className="text-brand-orange mx-auto mt-7 mb-6" />
-          <p className="font-display text-xl md:text-2xl text-ink leading-snug mb-5">
-            &ldquo;{item.message}&rdquo;
-          </p>
-          <div className="text-sm text-ink-muted">
-            {item.client_name}
-            {item.company ? ` · ${item.company}` : ''}
-          </div>
-        </div>
+        <TestimonialsRotator testimonials={testimonials} isDemo={isDemo} />
       </div>
     </section>
   );

@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
         </form>
 
         <p className="text-ink-soft text-xs mt-6 text-center">
-          There is no public sign-up. Accounts are created manually on supabase account to navigate table editor menu to add it.
+          There is no public sign-up. New Accounts are creating user dashboard menu in admin dashboard.
         </p>
       </div>
     </div>

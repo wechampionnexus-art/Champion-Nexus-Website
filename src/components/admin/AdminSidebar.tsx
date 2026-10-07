@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { LayoutDashboard, FileText, Users, Quote, Mail, LogOut, Menu, X } from 'lucide-react';
+import { LayoutDashboard, FileText, Users, Quote, Mail, LogOut, Menu, X, UserPlus } from 'lucide-react';
 import { logoutAction } from '@/lib/auth/logoutAction';
 import { cn } from '@/lib/utils/cn';
 
@@ -29,12 +28,17 @@ export function AdminSidebar({ adminBase, adminEmail }: Props) {
 
   const links = [
     { href: adminBase, label: 'Overview', icon: LayoutDashboard, exact: true },
+    { href: `${adminBase}/users`, label: 'Dashboard Users', icon: UserPlus },
+  
     { href: `${adminBase}/posts`, label: 'Blog Posts', icon: FileText },
     { href: `${adminBase}/team`, label: 'Team Members', icon: Users },
     { href: `${adminBase}/testimonials`, label: 'Testimonials', icon: Quote },
     { href: `${adminBase}/contacts`, label: 'Contact Submissions', icon: Mail },
-  ];
-
+    // FIX #4: lets an existing admin create new admin-dashboard accounts
+    // (e.g. for someone who'll manage blog posts) without touching
+    // Supabase directly. See src/app/internal-admin/(protected)/users/.
+    
+  ]
   const navContent = (
     <>
       <nav className="p-4 space-y-1">
@@ -73,7 +77,7 @@ export function AdminSidebar({ adminBase, adminEmail }: Props) {
       {/* Mobile top bar — visible below md, hidden on desktop */}
       <div className="md:hidden sticky top-0 z-40 flex items-center justify-between h-16 px-4 bg-white border-b border-line">
         <div>
-          <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} />
+          <p className="font-display font-bold text-ink text-sm">Champion Nexus</p>
           <p className="text-[11px] text-ink-soft -mt-0.5">Admin dashboard</p>
         </div>
         <button
@@ -118,7 +122,7 @@ export function AdminSidebar({ adminBase, adminEmail }: Props) {
       {/* Desktop sidebar — hidden below md, static column on desktop */}
       <aside className="hidden md:flex md:flex-col w-64 shrink-0 bg-white border-r border-line min-h-screen">
         <div className="p-6 border-b border-line">
-          <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} className="mb-2" />
+          <p className="font-display font-bold text-ink">Champion Nexus</p>
           <p className="text-xs text-ink-soft mt-0.5">Admin dashboard</p>
         </div>
         <div className="flex flex-col flex-1">{navContent}</div>

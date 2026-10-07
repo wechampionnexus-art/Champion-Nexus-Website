@@ -73,7 +73,6 @@ create table if not exists public.team_members (
   biography text,
   image_url text,
   image_alt text,
-  profile_url text,
   display_order integer not null default 0,
   published boolean not null default true,
   created_at timestamptz not null default now(),

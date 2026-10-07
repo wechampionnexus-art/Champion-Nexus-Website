@@ -70,10 +70,6 @@ export function TeamMemberForm({ action, member }: Props) {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label className={labelClass} htmlFor="profile_url">LinkedIn / profile URL (optional)</label>
-          <input id="profile_url" name="profile_url" type="text" defaultValue={member?.profile_url ?? ''} className={inputClass} />
-        </div>
-        <div>
           <label className={labelClass} htmlFor="display_order">Display order</label>
           <input id="display_order" name="display_order" type="number" defaultValue={member?.display_order ?? 0} className={inputClass} />
         </div>

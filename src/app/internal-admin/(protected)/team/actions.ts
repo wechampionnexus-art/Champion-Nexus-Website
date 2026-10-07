@@ -24,7 +24,6 @@ function readTeamFields(formData: FormData) {
     biography: String(formData.get('biography') || '') || null,
     image_url: String(formData.get('image_url') || '') || null,
     image_alt: String(formData.get('image_alt') || '') || null,
-    profile_url: String(formData.get('profile_url') || '') || null,
     display_order: Number(formData.get('display_order') || 0),
     published: formData.get('published') === 'on',
   };
