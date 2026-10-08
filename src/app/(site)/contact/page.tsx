@@ -38,8 +38,7 @@ export default function ContactPage() {
               <Mail size={20} className="text-brand-orange mb-3" />
               <h3 className="font-display font-bold text-ink mb-1">Email</h3>
               <p className="text-ink-muted text-sm">
-                Contact email to be confirmed by the client update
-                CONTACT_TO_EMAIL and this page before launch.
+                <a href="mailto:wechampionnexus@gmail.com" className='hover:text-brand-orange'>wechampionnexus@gmail.com</a>
               </p>
             </div>
             <div className="bg-white border border-line rounded-xl2 p-7">
