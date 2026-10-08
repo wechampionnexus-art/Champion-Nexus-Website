@@ -91,7 +91,7 @@ function GrowthIllustration() {
       <title id="gi-title">Connected digital growth strategy</title>
       <desc id="gi-desc">
         A central strategy dashboard with a steadily rising growth line is connected to four
-        services: SEO, content, link building and digital marketing, showing them working
+        services: SEO, content, link building and content marketing, showing them working
         together as one transparent, long-term strategy.
       </desc>
 

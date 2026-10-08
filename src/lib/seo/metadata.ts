@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const SITE_NAME = 'Champion Nexus';
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://championnexus.pro';
+export const SITE_URL = process.env.WEBSITE_URL || 'https://championnexus.pro';
 export const DEFAULT_DESCRIPTION =
   'Champion Nexus helps businesses build search visibility and grow through SEO, content, link building, and digital marketing services.';
 

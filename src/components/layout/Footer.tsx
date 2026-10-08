@@ -18,6 +18,12 @@ const COMPANY_LINKS = [
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
+const SOCIAL_LINKS = [
+  { href: '#', label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/share/19ZrFzFbW1/', label: 'Facebook' },
+  { href: '#', label: 'Instagram' },
+ 
+];
 
 export function Footer() {
   return (
@@ -30,7 +36,7 @@ export function Footer() {
               
             </Link>
             <p className="text-ink-muted text-sm leading-relaxed max-w-xs">
-              SEO, digital marketing, and growth strategies designed to strengthen your online
+              SEO, content marketing, and growth strategies designed to strengthen your online
               presence.
             </p>
             <div className="flex items-center gap-3 mt-6">

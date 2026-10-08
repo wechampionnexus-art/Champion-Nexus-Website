@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Mail, Clock, Globe } from 'lucide-react';
+import { Mail, Clock, MapPin} from 'lucide-react';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { buildMetadata } from '@/lib/seo/metadata';
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
           <h1 className="font-display font-extrabold text-4xl md:text-5xl text-ink mt-4 max-w-xl leading-tight">
             Let&apos;s talk about your growth
           </h1>
-          <p className="text-ink-muted text-lg mt-5 max-w-xl">
+          <p className="text-ink-muted text-lg max-w-xl">
             Tell us a bit about your business and goals we&apos;ll follow up to discuss how we
             can help.
           </p>
@@ -38,7 +38,7 @@ export default function ContactPage() {
               <Mail size={20} className="text-brand-orange mb-3" />
               <h3 className="font-display font-bold text-ink mb-1">Email</h3>
               <p className="text-ink-muted text-sm">
-                <a href="mailto:wechampionnexus@gmail.com" className='hover:text-brand-orange'>wechampionnexus@gmail.com</a>
+                <a href="mailto:marketingchampionnexus@gmail.pro" className='hover:text-brand-orange'>marketingchampionnexus@gmail.pro</a>
               </p>
             </div>
             <div className="bg-white border border-line rounded-xl2 p-7">
@@ -46,11 +46,20 @@ export default function ContactPage() {
               <h3 className="font-display font-bold text-ink mb-1">Response Time</h3>
               <p className="text-ink-muted text-sm">We typically reply within 1–2 business days.</p>
             </div>
-            <div className="bg-white border border-line rounded-xl2 p-7">
-              <Globe size={20} className="text-brand-orange mb-3" />
-              <h3 className="font-display font-bold text-ink mb-1">Based Online</h3>
-              <p className="text-ink-muted text-sm">Working with businesses remotely, wherever you are.</p>
+            <div className="bg-white border border-line rounded-xl p-7">
+              <MapPin size={20} className="text-brand-orange mb-3" />
+              <h3 className="font-display font-bold text-ink mb-1">Location</h3>
+
+              <div className="space-y-1">
+                <p className="text-ink-muted text-sm">
+                  <span className="font-semibold">Pakistan:</span> Lyallpur Galleria 2, Samundri Road, Faisalabad, Punjab
+                </p>
+                <p className="text-ink-muted text-sm">
+                  <span className="font-semibold">UK:</span> [Insert actual UK street address, city, and postcode here]
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
       </section>

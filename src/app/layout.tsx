@@ -15,11 +15,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: `${SITE_NAME} | SEO & Digital Marketing Agency`,
+    title: `${SITE_NAME} | SEO & Content Marketing Agency`,
     path: '/',
   }),
-  title: { default: `${SITE_NAME} | SEO & Digital Marketing Agency`, template: `%s | ${SITE_NAME}` },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://championnexus.pro'),
+  title: { default: `${SITE_NAME} | SEO & Content Marketing Agency`, template: `%s | ${SITE_NAME}` },
+  metadataBase: new URL(process.env.WEBSITE_URL || 'https://championnexus.pro/'),
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',

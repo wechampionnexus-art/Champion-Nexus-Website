@@ -184,7 +184,7 @@ check that the project compiles — do not skip it.
    you (typically an `A` record to Vercel's IP and/or a `CNAME` for `www`).
 3. Wait for DNS propagation and certificate issuance (Vercel handles HTTPS
    automatically).
-4. Set `NEXT_PUBLIC_SITE_URL=https://championnexus.pro` in production env
+4. Set `WEBSITE_URL=https://championnexus.pro` in production env
    vars — this feeds the sitemap, canonical URLs, and Open Graph metadata.
 
 ## 14. Project structure
