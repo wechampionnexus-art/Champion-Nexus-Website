@@ -54,9 +54,6 @@ export default function ContactPage() {
                 <p className="text-ink-muted text-sm">
                   <span className="font-semibold">Pakistan:</span> Lyallpur Galleria 2, Samundri Road, Faisalabad, Punjab
                 </p>
-                <p className="text-ink-muted text-sm">
-                  <span className="font-semibold">UK:</span> [Insert actual UK street address, city, and postcode here]
-                </p>
               </div>
             </div>
 

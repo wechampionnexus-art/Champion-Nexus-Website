@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Linkedin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Linkedin, Facebook, Instagram } from 'lucide-react';
 
 const SERVICE_LINKS = [
   { href: '/services/search-engine-optimization', label: 'SEO' },
@@ -18,11 +18,11 @@ const COMPANY_LINKS = [
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
+
 const SOCIAL_LINKS = [
-  { href: '#', label: 'LinkedIn' },
-  { href: 'https://www.facebook.com/share/19ZrFzFbW1/', label: 'Facebook' },
-  { href: '#', label: 'Instagram' },
- 
+  { href: '#', icon: Linkedin, label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/share/19ZrFzFbW1/', icon: Facebook, label: 'Facebook' },
+  { href: '#', icon: Instagram, label: 'Instagram' }
 ];
 
 export function Footer() {
@@ -33,21 +33,20 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-start gap-2.5 mb-4 justify-start">
               <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} />
-              
             </Link>
             <p className="text-ink-muted text-sm leading-relaxed max-w-xs">
               SEO, content marketing, and growth strategies designed to strengthen your online
               presence.
             </p>
             <div className="flex items-center gap-3 mt-6">
-              {[Linkedin, Facebook, Instagram, Twitter].map((Icon, i) => (
+              {SOCIAL_LINKS.map((social, i) => (
                 <a
                   key={i}
-                  href="#"
-                  aria-label="Social link (to be configured by the client)"
+                  href={social.href}
+                  aria-label={`Visit our ${social.label} page`}
                   className="w-9 h-9 rounded-full border border-line flex items-center justify-center text-ink-muted hover:text-brand-orange hover:border-brand-orange transition-colors"
                 >
-                  <Icon size={16} />
+                  <social.icon size={16} />
                 </a>
               ))}
             </div>
