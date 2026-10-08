@@ -38,7 +38,7 @@ export default function ContactPage() {
               <Mail size={20} className="text-brand-orange mb-3" />
               <h3 className="font-display font-bold text-ink mb-1">Email</h3>
               <p className="text-ink-muted text-sm">
-                <a href="mailto:marketingchampionnexus@gmail.pro" className='hover:text-brand-orange'>marketingchampionnexus@gmail.pro</a>
+                <a href="mailto:marketing@championnexus.pro" className='hover:text-brand-orange'>marketing@championnexus.pro</a>
               </p>
             </div>
             <div className="bg-white border border-line rounded-xl2 p-7">
