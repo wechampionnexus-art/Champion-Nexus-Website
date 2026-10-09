@@ -52,7 +52,7 @@ export default function ContactPage() {
 
               <div className="space-y-1">
                 <p className="text-ink-muted text-sm">
-                  <span className="font-semibold">Pakistan:</span> Lyallpur Galleria 2, Samundri Road, Faisalabad, Punjab
+                  <span className="font-semibold">Pakistan:</span> Near Lyallpur Galleria 2, Samundri Road, Faisalabad, Punjab
                 </p>
               </div>
             </div>
