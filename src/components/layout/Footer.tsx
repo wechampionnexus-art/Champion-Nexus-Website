@@ -83,8 +83,19 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
+          
           <div>
+            <h4 className="font-display font-semibold text-ink text-sm mb-4">Legal</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link href="/privacy-policy" className="text-ink-muted hover:text-brand-orange transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'>
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               {CONTACT_PHONE && (
@@ -111,16 +122,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-display font-semibold text-ink text-sm mb-4">Legal</h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/privacy-policy" className="text-ink-muted hover:text-brand-orange transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
+          
         </div>
 
         <div className="pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-soft">
