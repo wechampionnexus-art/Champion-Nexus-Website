@@ -25,18 +25,26 @@ const SOCIAL_LINKS = [
   { href: '#', icon: Instagram, label: 'Instagram' },
 ];
 
-// Phone number isn't live yet — set it here whenever it's ready and the
-// footer row will appear automatically, no other change needed.
+// Phone number isn't live yet — fill it in here whenever it's ready and
+// its card appears automatically below. No other change needed.
 const CONTACT_PHONE = '';
 const CONTACT_EMAIL = 'marketing@championnexus.pro';
 const CONTACT_LOCATION = 'Near Lyallpur Galleria 2, Samundri Road, Faisalabad, Punjab, Pakistan';
+
+const CONTACT_DETAILS = [
+  CONTACT_PHONE && { icon: Phone, label: 'Phone', value: CONTACT_PHONE, href: `tel:${CONTACT_PHONE}` },
+  { icon: Mail, label: 'Email', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+  { icon: MapPin, label: 'Location', value: CONTACT_LOCATION, href: undefined },
+].filter(Boolean) as { icon: typeof Mail; label: string; value: string; href?: string }[];
 
 export function Footer() {
   return (
     <footer className="bg-surface-gray border-t border-line pt-16 pb-8">
       <div className="max-w-container mx-auto px-5 md:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-14">
-          <div className="sm:col-span-2 lg:col-span-2">
+        {/* Contact Details — full-width row of its own, above the link columns */}
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 mb-14">
+          <div className="sm:col-span-2 md:col-span-2">
             <Link href="/" className="flex items-start gap-2.5 mb-4 justify-start">
               <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} />
             </Link>
@@ -94,40 +102,43 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* This wrapper keeps the header and list together in exactly ONE column block */}
-            <div className="flex flex-col">
-              <h4 className="font-display font-semibold text-ink text-sm mb-4">Contact</h4>
-              <ul className="space-y-3 text-sm">
-                {CONTACT_PHONE && (
-                  <li className="flex items-start gap-2.5 text-ink-muted">
-                    <Phone size={16} className="shrink-0 mt-0.5 text-brand-orange" />
-                    <a href={`tel:${CONTACT_PHONE}`} className="hover:text-brand-orange transition-colors break-words">
-                      {CONTACT_PHONE}
-                    </a>
-                  </li>
-                )}
-                <li className="flex items-start gap-2.5 text-ink-muted">
-                  <Mail size={16} className="shrink-0 mt-0.5 text-brand-orange" />
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    className="hover:text-brand-orange transition-colors break-all"
-                  >
-                    {CONTACT_EMAIL}
-                  </a>
-                </li>
-                <li className="flex items-start gap-2.5 text-ink-muted">
-                  <MapPin size={16} className="shrink-0 mt-0.5 text-brand-orange" />
-                  <span className="leading-relaxed">{CONTACT_LOCATION}</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Other columns (e.g., Services, Quick Links, Socials) go here */}
+          <div className="mb-14">
+          <h4 className="font-display font-semibold text-ink text-sm mb-5">Contact us</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {CONTACT_DETAILS.map((item) => {
+              const Icon = item.icon;
+              const body = (
+                <>
+                  <span className="w-11 h-11 rounded-xl2 bg-brand-orange/10 text-brand-orange flex items-center justify-center shrink-0">
+                    <Icon size={18} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-xs text-ink-soft mb-0.5">{item.label}</span>
+                    <span className="block text-sm font-medium text-ink leading-snug break-words">
+                      {item.value}
+                    </span>
+                  </span>
+                </>
+              );
+              return item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="flex items-center gap-3.5 bg-white border border-line rounded-xl2 p-4 hover:border-brand-orange transition-colors"
+                >
+                  {body}
+                </a>
+              ) : (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3.5 bg-white border border-line rounded-xl2 p-4"
+                >
+                  {body}
+                </div>
+              );
+            })}
           </div>
-
-
+        </div>
 
         </div>
 
