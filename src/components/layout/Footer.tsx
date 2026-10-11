@@ -21,12 +21,10 @@ const COMPANY_LINKS = [
 
 const SOCIAL_LINKS = [
   { href: '#', icon: Linkedin, label: 'LinkedIn' },
-  { href: 'https://www.facebook.com/share/19ZrFzFbW1/', icon: Facebook, label: 'Facebook' },
+  { href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
   { href: '#', icon: Instagram, label: 'Instagram' },
 ];
 
-// Phone number isn't live yet — fill it in here whenever it's ready and
-// its card appears automatically below. No other change needed.
 const CONTACT_PHONE = '';
 const CONTACT_EMAIL = 'marketing@championnexus.pro';
 const CONTACT_LOCATION = 'Near Lyallpur Galleria 2, Samundri Road, Faisalabad, Punjab, Pakistan';
@@ -41,16 +39,17 @@ export function Footer() {
   return (
     <footer className="bg-surface-gray border-t border-line pt-16 pb-8">
       <div className="max-w-container mx-auto px-5 md:px-8">
-        {/* Contact Details — full-width row of its own, above the link columns */}
         
+        {/* Main Footer Layout ordered exactly to your sequence */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 mb-14">
-          <div className="sm:col-span-2 md:col-span-2">
+          
+          {/* 1. Logo Section */}
+          <div className="sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-start gap-2.5 mb-4 justify-start">
               <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} />
             </Link>
-            <p className="text-ink-muted text-sm leading-relaxed max-w-xs">
-              SEO, content marketing, and growth strategies designed to strengthen your online
-              presence.
+            <p className="text-ink-muted text-sm leading-relaxed">
+              SEO, content marketing, and growth strategies designed to strengthen your online presence.
             </p>
             <div className="flex items-center gap-3 mt-6">
               {SOCIAL_LINKS.map((social, i) => (
@@ -66,6 +65,7 @@ export function Footer() {
             </div>
           </div>
 
+          {/* 2. Company Section */}
           <div>
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
@@ -79,6 +79,7 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* 3. Services Section */}
           <div>
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Services</h4>
             <ul className="space-y-3 text-sm">
@@ -92,6 +93,7 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* 4. Legal Section */}
           <div>
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Legal</h4>
             <ul className="space-y-3 text-sm">
@@ -102,51 +104,59 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="mb-14">
-          <h4 className="font-display font-semibold text-ink text-sm mb-5">Contact us</h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CONTACT_DETAILS.map((item) => {
-              const Icon = item.icon;
-              const body = (
-                <>
-                  <span className="w-11 h-11 rounded-xl2 bg-brand-orange/10 text-brand-orange flex items-center justify-center shrink-0">
-                    <Icon size={18} />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-xs text-ink-soft mb-0.5">{item.label}</span>
-                    <span className="block text-sm font-medium text-ink leading-snug break-words">
-                      {item.value}
+
+          {/* 5. Contact Us Section */}
+          <div>
+            <h4 className="font-display font-semibold text-ink text-sm mb-4">Contact us</h4>
+            <div className="flex flex-col gap-4">
+              {CONTACT_DETAILS.map((item) => {
+                const Icon = item.icon;
+                const body = (
+                  <div className="flex items-start gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center shrink-0 mt-0.5">
+                      <Icon size={14} />
                     </span>
-                  </span>
-                </>
-              );
-              return item.href ? (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-3.5 bg-white border border-line rounded-xl2 p-4 hover:border-brand-orange transition-colors"
-                >
-                  {body}
-                </a>
-              ) : (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-3.5 bg-white border border-line rounded-xl2 p-4"
-                >
-                  {body}
-                </div>
-              );
-            })}
+                    <div className="min-w-0">
+                      <span className="block text-[11px] text-ink-soft font-medium uppercase tracking-wider mb-0.5">{item.label}</span>
+                      <span className="block text-xs font-normal text-ink-muted leading-relaxed break-words">
+                        {item.value}
+                      </span>
+                    </div>
+                  </div>
+                );
+                return item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block group hover:text-brand-orange transition-colors"
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <div key={item.label}>
+                    {body}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
         </div>
 
+        {/* Footer Bottom Attribution */}
         <div className="pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-soft">
           <span>© {new Date().getFullYear()} Champion Nexus. All rights reserved.</span>
-          <span>Developed by <a href="https://waqar-ali-portfolio-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-ink-muted hover:text-brand-orange transition-colors">
-            Waqar Ali
-          </a></span>
+          <span>
+            Developed by{' '}
+            <a
+              href="https://vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink-muted hover:text-brand-orange transition-colors"
+            >
+              Waqar Ali
+            </a>
+          </span>
         </div>
       </div>
     </footer>
