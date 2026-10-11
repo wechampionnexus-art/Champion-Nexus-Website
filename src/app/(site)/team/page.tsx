@@ -47,7 +47,7 @@ export default async function TeamPage() {
                         alt={member.image_alt || member.name}
                         fill
                         sizes="320px"
-                        className="object-cover"
+                        className="bg-cover"
                       />
                     ) : (
                       <User2 size={48} className="text-ink-soft" aria-hidden="true" />
