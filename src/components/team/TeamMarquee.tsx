@@ -136,7 +136,7 @@ export function TeamMarquee({ members, isDemo }: Props) {
             alt={member.image_alt || member.name}
             fill
             sizes="256px"
-            className="object-contain"
+            className="object-cover object-center"
           />
         ) : (
           <User2 size={56} className="text-ink-soft" aria-hidden="true" />
