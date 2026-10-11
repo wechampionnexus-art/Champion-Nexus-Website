@@ -40,15 +40,15 @@ export function Footer() {
     <footer className="bg-surface-gray border-t border-line pt-16 pb-8">
       <div className="max-w-container mx-auto px-5 md:px-8">
         
-        {/* Main Footer Layout ordered exactly to your sequence */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 mb-14">
+        {/* Main 12-Column Layout Container */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 lg:gap-10 mb-14">
           
-          {/* 1. Logo Section */}
-          <div className="sm:col-span-2 md:col-span-1">
+          {/* 1. Logo Section (LONGER WIDTH - 3 Columns) */}
+          <div className="sm:col-span-2 md:col-span-3">
             <Link href="/" className="flex items-start gap-2.5 mb-4 justify-start">
               <Image src="/logo.png" alt="Champion Nexus" width={120} height={120} />
             </Link>
-            <p className="text-ink-muted text-sm leading-relaxed">
+            <p className="text-ink-muted text-sm leading-relaxed max-w-xs">
               SEO, content marketing, and growth strategies designed to strengthen your online presence.
             </p>
             <div className="flex items-center gap-3 mt-6">
@@ -65,8 +65,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* 2. Company Section */}
-          <div>
+          {/* 2. Company Section (SHORTER WIDTH - 2 Columns) */}
+          <div className="md:col-span-2">
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
               {COMPANY_LINKS.map((l) => (
@@ -79,8 +79,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 3. Services Section */}
-          <div>
+          {/* 3. Services Section (SHORTER WIDTH - 2 Columns) */}
+          <div className="md:col-span-2">
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Services</h4>
             <ul className="space-y-3 text-sm">
               {SERVICE_LINKS.map((l) => (
@@ -93,8 +93,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 4. Legal Section */}
-          <div>
+          {/* 4. Legal Section (SHORTER WIDTH - 2 Columns) */}
+          <div className="md:col-span-2">
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Legal</h4>
             <ul className="space-y-3 text-sm">
               <li>
@@ -105,8 +105,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 5. Contact Us Section */}
-          <div>
+          {/* 5. Contact Us Section (LONGER WIDTH - 3 Columns) */}
+          <div className="sm:col-span-2 md:col-span-3">
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Contact us</h4>
             <div className="flex flex-col gap-4">
               {CONTACT_DETAILS.map((item) => {
@@ -117,7 +117,9 @@ export function Footer() {
                       <Icon size={14} />
                     </span>
                     <div className="min-w-0">
-                      <span className="block text-[11px] text-ink-soft font-medium uppercase tracking-wider mb-0.5">{item.label}</span>
+                      <span className="block text-[11px] text-ink-soft font-medium uppercase tracking-wider mb-0.5">
+                        {item.label}
+                      </span>
                       <span className="block text-xs font-normal text-ink-muted leading-relaxed break-words">
                         {item.value}
                       </span>
