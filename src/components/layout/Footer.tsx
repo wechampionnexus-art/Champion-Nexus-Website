@@ -83,7 +83,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-display font-semibold text-ink text-sm mb-4">Legal</h4>
             <ul className="space-y-3 text-sm">
@@ -95,34 +95,40 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'>
-            <h4 className="font-display font-semibold text-ink text-sm mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm">
-              {CONTACT_PHONE && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* This wrapper keeps the header and list together in exactly ONE column block */}
+            <div className="flex flex-col">
+              <h4 className="font-display font-semibold text-ink text-sm mb-4">Contact</h4>
+              <ul className="space-y-3 text-sm">
+                {CONTACT_PHONE && (
+                  <li className="flex items-start gap-2.5 text-ink-muted">
+                    <Phone size={16} className="shrink-0 mt-0.5 text-brand-orange" />
+                    <a href={`tel:${CONTACT_PHONE}`} className="hover:text-brand-orange transition-colors break-words">
+                      {CONTACT_PHONE}
+                    </a>
+                  </li>
+                )}
                 <li className="flex items-start gap-2.5 text-ink-muted">
-                  <Phone size={16} className="shrink-0 mt-0.5 text-brand-orange" />
-                  <a href={`tel:${CONTACT_PHONE}`} className="hover:text-brand-orange transition-colors break-words">
-                    {CONTACT_PHONE}
+                  <Mail size={16} className="shrink-0 mt-0.5 text-brand-orange" />
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="hover:text-brand-orange transition-colors break-all"
+                  >
+                    {CONTACT_EMAIL}
                   </a>
                 </li>
-              )}
-              <li className="flex items-start gap-2.5 text-ink-muted">
-                <Mail size={16} className="shrink-0 mt-0.5 text-brand-orange" />
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="hover:text-brand-orange transition-colors break-all"
-                >
-                  {CONTACT_EMAIL}
-                </a>
-              </li>
-              <li className="flex items-start gap-2.5 text-ink-muted">
-                <MapPin size={16} className="shrink-0 mt-0.5 text-brand-orange" />
-                <span className="leading-relaxed">{CONTACT_LOCATION}</span>
-              </li>
-            </ul>
+                <li className="flex items-start gap-2.5 text-ink-muted">
+                  <MapPin size={16} className="shrink-0 mt-0.5 text-brand-orange" />
+                  <span className="leading-relaxed">{CONTACT_LOCATION}</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Other columns (e.g., Services, Quick Links, Socials) go here */}
           </div>
 
-          
+
+
         </div>
 
         <div className="pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-soft">
