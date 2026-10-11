@@ -129,7 +129,7 @@ export function TeamMarquee({ members, isDemo }: Props) {
       aria-hidden={hidden || undefined}
       className="team-card bg-white border border-line rounded-xl2 shadow-card w-64 shrink-0 overflow-hidden"
     >
-      <div className="h-48 bg-surface-gray flex items-center justify-center relative">
+      <div className="h-54 bg-surface-gray flex items-center justify-center relative">
         {member.image_url ? (
           <Image
             src={member.image_url}
