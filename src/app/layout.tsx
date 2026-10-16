@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     path: '/',
   }),
   title: { default: `${SITE_NAME} | SEO & Digital Growth Agency`, template: `%s | ${SITE_NAME}` },
-  metadataBase: new URL(process.env.WEBSITE_URL || 'https://championnexus.pro/'),
+  metadataBase: new URL(process.env.WEBSITE_URL || 'https://championnexus.pro'),
   icons: {
     icon: '/favicon-48.png',
     shortcut: '/favicon.ico',
