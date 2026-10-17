@@ -36,6 +36,37 @@ body {
   outline: none;
 }
 
+/* Hero section: plain CSS entrance + float, replacing the old GSAP-driven
+   animation so Hero.tsx no longer needs to import('gsap') or run any JS on
+   load — this was a meaningful chunk of the mobile Total Blocking Time
+   Lighthouse flagged. Both animations are transform/opacity only (GPU
+   compositing, no layout thrash), and the prefers-reduced-motion block
+   above already zeroes their duration for users who need that. */
+.hero-fade-up {
+  animation: hero-fade-up 0.7s ease-out both;
+}
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-float {
+  animation: hero-float 4.5s ease-in-out infinite;
+}
+.hero-float:nth-child(2) { animation-delay: 0.4s; }
+.hero-float:nth-child(3) { animation-delay: 0.9s; }
+.hero-float:nth-child(4) { animation-delay: 1.3s; }
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 /* Rendered blog article content (see RichTextRenderer.tsx) */
 .article-prose h2 {
   font-family: var(--font-jakarta), sans-serif;

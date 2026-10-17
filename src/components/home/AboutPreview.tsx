@@ -81,7 +81,6 @@ function GrowthIllustration() {
       ref={root}
       viewBox="0 0 800 620"
       width="100%"
-      height="auto"
       preserveAspectRatio="xMidYMid meet"
       role="img"
       aria-labelledby="gi-title gi-desc"
